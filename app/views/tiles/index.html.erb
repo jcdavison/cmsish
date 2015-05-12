@@ -1,0 +1,8 @@
+<div class='row'>
+  <div class='col-sm-4 center-block no-float'>
+    <h2>Take me to your <%= link_to "Tile", new_tile_path %>.</h2>
+  </div>
+  <div class='col-sm-6 center-block no-float'>
+    <%= render partial: 'shared/tile', collection: @tiles %>
+  </div>
+</div>

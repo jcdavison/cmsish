@@ -1,0 +1,11 @@
+<div class='panel panel-default'>
+  <div class='panel-body'>
+    <div>content: <%= tile.content %></div>
+    <div>href: <%= link_to tile.href, tile.href, target: 'new' %></div>
+    <div>status: <span class='green'><%= tile.aasm_state %></div>
+    <div class='tiny'>
+      <%= link_to 'edit', edit_tile_path(tile), class: 'red' %>
+      <%= link_to 'delete', tile_path(tile), method: :delete, class: 'red' %>
+    </div>
+  </div>
+</div>

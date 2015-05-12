@@ -1,0 +1,26 @@
+@font-face{
+  font-family: "Lato";
+  src: url('Lato-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// VARIABLES
+$white: white;
+$red: #CF4E42;
+$mauve: rgb(151, 120, 120);
+$blue: hsl(204, 87%, 50%);
+$green: hsl(120%, 35%, 50%);
+$light_green: rgba(120, 151, 120, 0.2);
+$dark_green: rgba(75, 154, 75, 1);
+$grey: rgb(128, 128, 128);
+$light_grey: rgba(128, 128, 128, .65);
+$dark_grey: rgba(93, 93, 93, 1);
+$light_blue: hsla(210, 68%, 42%, .5);
+$dark_blue: rgba(12, 124, 197, 1);
+$very_light_grey: rgba(121, 121, 151, .3);
+$light_red: rgba(207, 78, 66, .5);
+$link_color: $green;
+$gold: #FEFE00;
+$default-border: 1px solid #ccc;
+

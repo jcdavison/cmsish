@@ -1,0 +1,43 @@
+<div class='row'>
+  <div class='col-sm-6 center-block no-float'>
+
+    <%= form_for :display, url: displays_path, method: :post do |form| %>
+      <div class="form-group panel panel-default">
+        Please select the contents of Tile in Position #1.
+        <div class="col-sm-8 padded uivalidate center-block no-float">
+          <%= form.select :position_1, options_from_collection_for_select(@tiles, "id", "href") %>
+        </div>
+      </div>
+
+      <div class="form-group panel panel-default">
+        Please select the contents of Tile in Position #1.
+        <div class="col-sm-8 padded uivalidate center-block no-float">
+          <%= form.select :position_2, options_from_collection_for_select(@tiles, "id", "href") %>
+        </div>
+      </div>
+
+      <div class="form-group panel panel-default">
+        Please select the contents of Tile in Position #1.
+        <div class="col-sm-8 padded uivalidate center-block no-float">
+          <%= form.select :position_3, options_from_collection_for_select(@tiles, "id", "href") %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-8 padded center-block no-float">
+          <label>publish?</label>
+          yes
+          <%= form.radio_button :published?, true %>
+          no
+          <%= form.radio_button :published?, false %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-4 padded center-block no-float">
+          <%= form.submit placeholder: 'create', class: 'form-control' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

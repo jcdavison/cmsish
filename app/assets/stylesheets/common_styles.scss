@@ -1,0 +1,42 @@
+.blue {
+  color: $blue;
+}
+
+.no-float {
+  float: none !important;
+}
+
+.padded {
+  padding: .5em;
+}
+
+div.uivalidate > .form-control.ui-state-error {
+  border-color: $red !important;
+  border-width: 2px;
+}
+
+div.uivalidate > .form-control.ui-state-valid {
+  border-color: $green !important;
+  border-width: 2px;
+}
+// VALIDATION
+
+div.uivalidate > .form-control.ui-state-error {
+  border-color: $red !important;
+  border-width: 2px;
+}
+
+.red-border {
+  border-color: $red !important;
+  border-width: 2px !important;
+}
+
+.green-border {
+  border-color: $green !important;
+  border-width: 2px !important;
+}
+
+div.uivalidate > .form-control.ui-state-valid {
+  border-color: $green !important;
+  border-width: 2px;
+}
