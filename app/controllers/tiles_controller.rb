@@ -19,7 +19,8 @@ class TilesController < ApplicationController
 
   def update
     tile = Tile.find params[:id]
-    tile.publish! if should_publish? :tile
+    tile.update_attributes tile_params
+    tile.toggle_published! if should_toggle_publish? tile
     redirect_to tiles_path
   end
 

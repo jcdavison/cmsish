@@ -1,17 +1,14 @@
 <div class='row'>
   <div class='col-sm-4 center-block no-float'>
     <% if @display.id.nil? %>
-      <h4>Looks like you don't have any content yet</h4>
-      <h4>Try <%= link_to 'creating a display', new_display_path %>?</h4>
+      <h3>Got content?</h4>
+      <h4>1. <%= link_to 'Create some tiles', new_tile_path %>?</h4>
+      <h4>2. <%= link_to 'Create a display', new_display_path %>?</h4>
     <% else %>
       <H2>Welcome to my display.</h2>
       <%= render partial: 'shared/tile', collection: @display.tiles %>
       <%= link_to 'edit display', edit_display_path(@display.id) %>
-    <% end %>
-    <div>
       <%= link_to 'new display', new_display_path %>
-    </div>
-    <div>
-    </div>
+    <% end %>
   </div>
 </div>
