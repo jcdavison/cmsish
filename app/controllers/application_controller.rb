@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
 
   def should_toggle_publish? obj
     resource_key = obj.class.to_s.downcase.to_sym
-    params[resource_key] && params[resource_key][:published] != obj.published?
+    params[resource_key] && params[resource_key][:published] != obj.published?.to_s
   end
 end

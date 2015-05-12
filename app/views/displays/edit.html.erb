@@ -15,6 +15,14 @@
           <%= form.radio_button :published?, false %>
         </div>
       </div>
+      <%= form.fields_for :tile_indices do |ti| %>
+        <div class="form-group panel panel-default">
+          Please select the contents of Tile in Position #<%= ti.index + 1 %>.
+          <div class="col-sm-8 padded center-block no-float">
+            <%= ti.select :tile_id, options_from_collection_for_select(@tiles, "id", "href", set_display_index_value(ti.index + 1, @tile_indices)) %>
+          </div>
+        </div>
+      <% end %>
       <div class="form-group">
         <div class="col-sm-8 padded center-block no-float">
           <%= form.submit value: 'update published status', class: 'form-control' %>
@@ -25,31 +33,5 @@
 </div>
 <div class='row'>
   <div class='col-sm-6 center-block no-float'>
-    <%= form_for :display_indices, url: update_indices_path(@display.id), method: :put do |form|%>
-
-      <div class="form-group panel panel-default">
-        Please select the contents of Tile in Position #1.
-        <div class="col-sm-8 padded uivalidate center-block no-float">
-          <%= form.select :position_1, options_from_collection_for_select(@tiles, "id", "href", set_display_index_value(1, @tile_indices)) %>
-        </div>
-      </div>
-      <div class="form-group panel panel-default">
-        Please select the contents of Tile in Position #2.
-        <div class="col-sm-8 padded uivalidate center-block no-float">
-          <%= form.select :position_2, options_from_collection_for_select(@tiles, "id", "href", set_display_index_value(2, @tile_indices)) %>
-        </div>
-      </div>
-      <div class="form-group panel panel-default">
-        Please select the contents of Tile in Position #3.
-        <div class="col-sm-8 padded uivalidate center-block no-float">
-          <%= form.select :position_3, options_from_collection_for_select(@tiles, "id", "href", set_display_index_value(3, @tile_indices)) %>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-8 padded center-block no-float">
-          <%= form.submit value: 'update tile layout', class: 'form-control' %>
-        </div>
-      </div>
-    <% end %>
   </div>
 </div>

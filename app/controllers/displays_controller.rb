@@ -13,22 +13,25 @@ class DisplaysController < ApplicationController
   def edit
     @tiles = Tile.published
     @display = Display.find(params[:id])
+    @display_tiles = @display.tiles
     @tile_indices = @display.tile_indices
   end
 
   def update
     display = Display.find(params[:id])
+    update_tile_indices display
     display.toggle_published! if should_toggle_publish? display
     redirect_to root_path
   end
-
-  def indices
-    @display = Display.find(params[:id])
-    update_indices @display.tile_indices
-    redirect_to root_path
-  end
-
   private
+
+    def update_tile_indices display
+      params[:display][:tile_indices_attributes].each_with_index do |ti_info|
+        tile_index = display.tile_indices.find_by(tile_index: ti_info[0].to_i + 1)
+        tile_index.update_attributes tile_id: ti_info[1][:tile_id]
+      end
+    end
+
     def display_params
       params.require(:display).permit(:href, :content)
     end
