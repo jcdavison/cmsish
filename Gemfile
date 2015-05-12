@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'quiet_assets', '~> 1.1.0'
 gem 'aasm', '~> 4.0.8'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'pry'
